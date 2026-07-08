@@ -65,7 +65,6 @@ Save_noteBtn.addEventListener("click", () => {
 
 // Render Notes in <li> elements inside the parent element <ul>
 function RenderNotes(array, parentEl) {
-    console.log(array);
     let GenHtml = '';
     if(array.length != 0){
         for (let i = 0; i < array.length; i++) {
