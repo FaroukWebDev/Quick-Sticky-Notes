@@ -162,6 +162,13 @@ ul.Notes-display-st {
     padding-left: 20px;
     padding-right: 20px;
     list-style-type: none;
+    /* NEW!! */
+    /* make notes display like a boxes behind them */
+    column-width: 200px;
+    column-gap: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    /* ----- */
     /* border: 5px solid white; */
 }
 
@@ -187,8 +194,12 @@ ul.Notes-display-st {
     margin: 5px 0;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.502);
     /* margin-right: 30px; */
-    /* display: block; */
+    /* display: inline-block; */
     transition: background-color 0.3s;
+
+    /* NEW!! */
+    break-inside: avoid;
+    /* ----- */
 }
 
 .Notes-display-st li:hover {
