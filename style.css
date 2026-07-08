@@ -1,0 +1,421 @@
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(46, 46, 46);
+    position: relative;
+}
+
+/* title of the page */
+h1 {
+    margin: 0;
+    padding: 10px 0;
+    color: white;
+    text-align: center;
+    font-family: arial;
+}
+
+/* the container of the input and the buttons of notes */
+
+.Notes-save {
+    height: 70%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    position: relative;
+}
+
+/* Notes input style */
+.Notes-input {
+    padding: 5px;
+    height: 70%;
+    width: 90%;
+    max-width: 450px;
+    /* min-width: 300px; */
+    resize: none;
+    outline: none;
+    background-color: rgb(33, 33, 33);
+    color: white;
+    border: 2px solid rgb(179, 179, 179);
+    border-radius: 10px;
+}
+
+/* the container of the buttons "Notes" */
+.Notes-btns-part {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.confirmation-message{
+    /* width: 100px; */
+    padding:5px 20px;
+    border-radius: 4px;
+    background-color: rgb(74, 74, 74);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
+    font-family: Arial;
+    font-style: italic;
+    font-weight: light;
+    font-size: medium;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+/* buttons style and hover/active effects */
+.Notes-btns-part button {
+    font-size: 16px;
+    font-weight: 600;
+    font-family: Arial;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border-width: 3px;
+    border-style: solid;
+    color: white;
+    transition: color 0.3s, background-color 0.3s, opacity 0.3s;
+}
+
+/* Save button */
+.Save-btn-style {
+    background-color: green;
+    border-color: green;
+}
+
+.Save-btn-style:hover {
+    color: green;
+    background-color: white;
+}
+
+.Save-btn-style:active {
+    opacity: 0.9;
+}
+
+/* review button */
+.review-btn-style {
+    background-color: orange;
+    border-color: orange;
+}
+
+.review-btn-style:hover {
+    color: orange;
+    background-color: white;
+}
+
+.review-btn-style:active {
+    opacity: 0.9;
+}
+
+/* Notes's display page style */
+.display-st {
+    /* border: 2px solid rgb(109, 98, 98); */
+    margin: 0;
+    display: none;
+    grid-template-columns: 1fr;
+    grid-template-rows: 90% 10%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(46, 46, 46);
+    overflow: hidden;
+}
+
+.Notes-container {
+    margin: 0;
+    height: 100%;
+    width: 99%;
+    overflow-y: auto;
+    border: 2px solid rgb(195, 196, 196);
+    background-color: rgb(84, 84, 84);
+    box-shadow: inset 0 0 10px rgb(0, 0, 0);
+    position: relative;
+}
+
+.delete-confimation-message,.edit-confimation-message,.reset-confimation-message{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,80%);
+    color: white;
+    padding: 5px 20px;
+    background-color: rgb(142, 142, 142);
+    border-radius: 4px;
+    font-family: Arial;
+    font-style: italic;
+    font-weight: light;
+    font-size: medium;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 1s;
+    z-index: 3;
+}
+
+ul.Notes-display-st {
+    padding-left: 20px;
+    padding-right: 20px;
+    list-style-type: none;
+    /* border: 5px solid white; */
+}
+
+.Notes-container::-webkit-scrollbar {
+    width: 10px;
+    background-color: rgb(68, 68, 68);
+}
+
+.Notes-container::-webkit-scrollbar-thumb {
+    background-color: rgb(195, 196, 196);
+}
+
+.Notes-display-st li {
+    list-style: none;
+    font-size: medium;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 20px;
+    border: 2px solid black;
+    border-radius: 15px;
+    background-color: rgb(56, 56, 56);
+    padding: 10px;
+    margin: 5px 0;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.502);
+    /* margin-right: 30px; */
+    /* display: block; */
+    transition: background-color 0.3s;
+}
+
+.Notes-display-st li:hover {
+    background-color: rgb(42, 42, 42);
+}
+
+.exit-part {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.Exit-Notes-btn-style,.Reset-Notes-btn-style {
+    font-size: 16px;
+    font-family: Arial;
+    font-weight: 600;
+    padding: 5px 10px;
+    border: 3px solid red;
+    border-radius: 5px;
+    color: white;
+    background-color: red;
+    transition: color 0.3s, backgound-color 0.3s, opacity 0.3s;
+}
+
+.Exit-Notes-btn-style:hover {
+    color: red;
+    background-color: white;
+}
+
+
+.Exit-Notes-btn-style:active {
+    opacity: 0.9;
+}
+
+.Reset-Notes-btn-style{
+    border-color: orange;
+    background-color: orange;
+}
+
+.Reset-Notes-btn-style:hover{
+    color: orange;
+    background-color: white;
+}
+
+.Reset-Notes-btn-style:active{
+    opacity: 0.9;
+}
+
+/* the part of edit/delete note that clicked */
+
+.Notes-settings-popup {
+    /* border: 2px solid white; */
+    border: 3px solid rgb(195, 196, 196);
+    border-radius: 12px;
+    background-color: rgb(46, 46, 46);
+    max-width: 400px;
+    min-width: 214px;
+    width: 85%;
+    height: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* pointer-events: all; */
+    display: none;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    z-index: 2;
+}
+
+/* the style of popup text */
+
+.Notes-settings-popup h2{
+    color: white;
+    font-family: Arial;
+    text-align: center;
+}
+
+/* the buttons of the popup */
+
+.Notes-settings-popup-btns{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/* the style of all buttons */
+
+.Notes-settings-popup-btns button{
+    font-size: 16px;
+    font-weight: 600;
+    font-family: Arial;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border-width: 3px;
+    border-style: solid;
+    color: white;
+    transition: color 0.3s, background-color 0.3s, opacity 0.3s;
+}
+
+/* Exit popup of note style */
+.exit-Notes-settings-st{
+    border-color: red;
+    background-color: red;
+}
+
+.exit-Notes-settings-st:hover{
+    color: red;
+    background-color: white;
+}
+/* delete btn style */
+.delete-Notest-btn-st{
+    border-color: rgb(163, 0, 0);
+    background-color: rgb(163, 0, 0);
+}
+
+.delete-Notest-btn-st:hover{
+    color: rgb(163, 0, 0);
+    background-color: white;
+}
+
+/* edit btn style */
+.edit-Notes-settings-st{
+    border-color: orange;
+    background-color: orange;
+}
+
+.edit-Notes-settings-st:hover{
+    color: orange;
+    background-color: white;
+}
+
+/* the blur effect that display when the Notes_popup display */
+
+.blur-BackPopup {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1;
+    transition: opacity 0.3s;
+}
+
+/* the popup of editing the note style */
+
+.edit-part-note{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    grid-template-columns: 100%;
+    grid-template-rows: 7.5% 92.5%;
+    background-color: rgb(59, 59, 59);
+}
+/* the part of buttons in the editing popup */
+
+.edit-part-note-btns{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    background-color: rgb(46, 46, 46);
+}
+
+/* the complete/save changes btn */
+
+.complete-SaveChange-btn-st{
+    height: 100%;
+    width: 50px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    transition: background-color 0.3s;
+}
+
+.complete-SaveChange-btn-st:hover{
+    background-color: rgb(27, 27, 27);
+}
+
+.complete-SaveChange-btn-st img{
+    width: 30px;
+}
+
+.minimize-btn-st{
+    height: 100%;
+    width: 50px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    transition: background-color 0.3s;
+}
+
+.minimize-btn-st:hover{
+    background-color: rgb(27, 27, 27);
+}
+
+.minimize-btn-st img{
+    width: 30px;
+}
+
+/* the input that will edit the note in */
+
+.edit-part-note-input{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(33, 33, 33);
+    border-top: 2px solid rgb(179, 179, 179);
+}
+
+.Note-edit-input-st{
+    outline: none;
+    resize: none;
+    border: none;
+    width: 95%;
+    height: 95%;
+    background-color: rgb(33, 33, 33);
+    color: white;
+}

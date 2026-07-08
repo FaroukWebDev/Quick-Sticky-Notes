@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Notes</title>
+</head>
+
+<body>
+    <h1>Quick Sticky Notes</h1>
+    <div class="Notes-save">
+        <!-- confirmation message of saving data [Notes] -->
+        <div class="confirmation-message" id="confirm-message">saved</div>
+        <!-- input for enter the data [Notes]  -->
+        <textarea placeholder="Write a note..." name="note-input" class="Notes-input" id="Notes-input" cols="45"
+        rows="12"></textarea>
+        <div class="Notes-btns-part">
+            <!-- save  data button -->
+            <button class="Save-btn-style" id="Save-btn">Save</button>
+            <!-- view saving data button -->
+            <button class="review-btn-style" id="review-btn">View Notes</button>
+        </div>
+    </div>
+
+    <!-- the part that display all the notes -->
+    <div class="display-st" id="display">
+        <div class="Notes-container">
+            <ul class="Notes-display-st" id="Notes-display">
+                <!-- Notes -->
+            </ul>
+            <!-- confirm message of delete data success [Notes] -->
+            <div class="delete-confimation-message" id="delete-confirm-message"><!-- the message--></div>
+            <!-- confirm message of edit data success [Notes] -->
+            <div class="edit-confimation-message" id="edit-confirm-message"><!-- the message--></div>
+
+            <div class="reset-confimation-message" id="reset-confirm-message"><!-- the message--></div>
+        </div>
+        <div class="exit-part">
+            <!-- Reset Notes button -->
+            <button class="Reset-Notes-btn-style" id="Reset-Notes-btn">Reset Notes</button>
+            <!-- Exit display note popup button -->
+            <button class="Exit-Notes-btn-style" id="Exit-Notes-btn">Exit</button>
+        </div>
+        <!-- display this popup of edit/delete Note setting -->
+        <div class="Notes-settings-popup" id="Notes-settings-popup">
+            <h2>What do you want to do ?</h2>
+            <div class="Notes-settings-popup-btns">
+                <!-- delete note button -->
+                <button class="delete-Notest-btn-st" id="delete-Notes-settings">Delete</button>
+                <!-- edit note button -->
+                <button class="edit-Notes-settings-st" id="edit-Notes-settings">Edit</button>
+                <!-- exit popup button -->
+                <button class="exit-Notes-settings-st" id="exit-Notes-settings">Exit</button>
+            </div>
+        </div>
+        <!-- blur background of the popup of edit/delete Note setting -->
+        <div class="blur-BackPopup" id="blur-BackPopup"></div>
+
+        <!-- the part of edit notes -->
+        <div class="edit-part-note" id="edit-part-note">
+            <div class="edit-part-note-btns">
+                <!-- minimize button -->
+                <button class="minimize-btn-st" id="minimize-edit-input-btn"><img src="icons/minimize-svgrepo-com.svg" alt="minimize button"></button>
+                <!-- save the changes button -->
+                <button class="complete-SaveChange-btn-st" id="complete-SaveChange-btn"><img src="icons/check-svgrepo-com.svg" alt="check Button"></button>
+            </div>
+            <div class="edit-part-note-input">
+                <!-- the input of editing notes -->
+                <textarea name="edit" class="Note-edit-input-st" id="Note-edit-input"></textarea>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
