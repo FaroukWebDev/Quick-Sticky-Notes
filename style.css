@@ -259,6 +259,9 @@ ul.Notes-display-st {
     min-width: 214px;
     width: 85%;
     height: 200px;
+    min-width: 214px;
+    width: 85%;
+    height: 200px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -429,4 +432,76 @@ ul.Notes-display-st {
     height: 95%;
     background-color: rgb(33, 33, 33);
     color: white;
+}
+
+/* confirmation of Action popup style */
+
+.confirm-action-st{
+    border: 3px solid rgb(195, 196, 196);
+    border-radius: 12px;
+    background-color: rgb(65, 65, 65);
+    max-width: 350px;
+    min-width: 214px;
+    width: 85%;
+    height: 150px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    display: none;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    z-index: 4;
+}
+
+.confirm-action-st h2{
+    color: white;
+    font-family: Arial;
+    text-align: center;
+}
+
+.confirm-action-btns-st{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.Yes-action-btn-st,.No-action-btn-st{
+    font-size: 16px;
+    font-weight: 600;
+    font-family: Arial;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border-width: 3px;
+    border-style: solid;
+    color: white;
+    transition: color 0.3s, background-color 0.3s, opacity 0.3s;
+}
+
+.Yes-action-btn-st{
+    background-color: green;
+    border-color: green;
+}
+
+.Yes-action-btn-st:hover{
+    background-color: white;
+    color: green;
+}
+
+.No-action-btn-st{
+    background-color: rgb(181, 0, 0);
+    border-color: rgb(181, 0, 0);
+}
+
+.No-action-btn-st:hover{
+    background-color: white;
+    color: rgb(181, 0, 0);
+}
+
+/* blur effect behind the confirm action popup */
+
+.blur-Back-confirm-action{
+    z-index: 3;
 }
